@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { 
+    path: 'weather', 
+    loadChildren: () => import('./weather/weather.module').then(module => module.WeatherModule) 
+  },
+  { path: '', redirectTo: 'weather', pathMatch: 'full' }
+ ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

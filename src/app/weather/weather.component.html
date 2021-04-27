@@ -1,0 +1,17 @@
+<div class="page">
+    <div class="page-header">Weather Forecast</div>
+    <div class="page-body">
+
+        <div class="page-body__sidebar">
+            <ul class="cities-list">
+                <li class="cities-list__item" *ngFor="let city of cities">
+                    <a [routerLink]="['details', city.id]">{{ city.name }}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="page-body__details">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
